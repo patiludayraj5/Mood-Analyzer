@@ -4,17 +4,17 @@ import org.junit.Test;
 
 public class TestMood_Analyzer {
     @Test
-    public void givenMessgae_WhenSad_ShouldReturn_Sad() {
+    public void testAnalyseMood() {
+        // Test case with "I am in Sad Mood"
         Mood_Analyzer moodAnalyzer = new Mood_Analyzer("I am in Sad Mood");
-        String mood = moodAnalyzer.analyseMood();
-        Assert.assertEquals("SAD",mood);
+        Assert.assertEquals("Sad Mood", moodAnalyzer.analyseMood());
 
-    }
+        // Test case with null message
+        Mood_Analyzer moodAnalyzerNull = new Mood_Analyzer(null);
+        Assert.assertEquals("Unable to determine mood", moodAnalyzerNull.analyseMood());
 
-    @Test
-    public void givenMessage_WhenNotSad_ShouldReturn_Happy() {
-        Mood_Analyzer moodAnalyzer = new Mood_Analyzer("I am in Any Mood");
-        String mood = moodAnalyzer.analyseMood();
-        Assert.assertEquals("HAPPY",mood);
+        // Additional test case with "I am feeling happy today!"
+        Mood_Analyzer moodAnalyzerHappy = new Mood_Analyzer("I am feeling happy today!");
+        Assert.assertEquals("Happy Mood", moodAnalyzerHappy.analyseMood());
     }
 }
