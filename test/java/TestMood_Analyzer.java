@@ -6,7 +6,7 @@ public class TestMood_Analyzer {
     @Test
     public void testAnalyseMood() {
         // Test case with "I am in Sad Mood"
-        Mood_Analyzer moodAnalyzer = new Mood_Analyzer("I am in Sad Mood");
+        Mood_Analyzer moodAnalyzer = new Mood_Analyzer("I am in sad Mood");
         Assert.assertEquals("Sad Mood", moodAnalyzer.analyseMood());
 
         // Test case with null message
